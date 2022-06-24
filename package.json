@@ -1,10 +1,10 @@
 {
-  "name": "@getluko/mobile-eslint-guidelines",
+  "name": "@getluko/eslint-plugin-mobile-guidelines",
   "author": "luko",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Custom ESLint Rules & Config created by mobile team",
   "main": "dist/",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "files": [
     "dist/"
   ],
