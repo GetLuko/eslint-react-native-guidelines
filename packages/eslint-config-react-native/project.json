@@ -1,0 +1,33 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/eslint-config-react-native/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/eslint-config-react-native",
+        "main": "packages/eslint-config-react-native/src/index.ts",
+        "tsConfig": "packages/eslint-config-react-native/tsconfig.lib.json",
+        "assets": ["packages/eslint-config-react-native/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/eslint-config-react-native/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/eslint-config-react-native"],
+      "options": {
+        "jestConfig": "packages/eslint-config-react-native/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
