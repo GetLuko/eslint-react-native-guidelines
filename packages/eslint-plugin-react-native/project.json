@@ -5,27 +5,43 @@
   "targets": {
     "build": {
       "executor": "@nrwl/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/packages/eslint-plugin-react-native",
         "main": "packages/eslint-plugin-react-native/src/index.ts",
         "tsConfig": "packages/eslint-plugin-react-native/tsconfig.lib.json",
-        "assets": ["packages/eslint-plugin-react-native/*.md"]
+        "assets": [
+          "packages/eslint-plugin-react-native/*.md"
+        ]
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["packages/eslint-plugin-react-native/**/*.ts"]
+        "lintFilePatterns": [
+          "packages/eslint-plugin-react-native/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/eslint-plugin-react-native"],
+      "outputs": [
+        "coverage/packages/eslint-plugin-react-native"
+      ],
       "options": {
         "jestConfig": "packages/eslint-plugin-react-native/jest.config.ts",
         "passWithNoTests": true
+      }
+    },
+    "deploy": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
       }
     }
   },

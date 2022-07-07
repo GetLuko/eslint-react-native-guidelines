@@ -2,14 +2,6 @@
   "name": "eslint-getluko-react-native-guidelines",
   "version": "0.0.2",
   "license": "MIT",
-  "scripts": {
-    "build:config": "npx nx build eslint-config-react-native",
-    "build:plugin": "npx nx build eslint-plugin-react-native",
-    "prepublish": "npm run build:config && npm run build:plugin",
-    "publish:config": "cd ./dist/packages/eslint-config-react-native && npm publish",
-    "publish:plugin": "cd ./dist/packages/eslint-plugin-react-native && npm publish",
-    "publish": "npm run publish:config && npm run publish:plugin"
-  },
   "devDependencies": {
     "@nrwl/cli": "14.4.0",
     "@nrwl/eslint-plugin-nx": "14.4.0",
@@ -24,6 +16,7 @@
     "jest": "27.5.1",
     "metro": "0.71.1",
     "metro-babel-register": "0.71.1",
+    "ngx-deploy-npm": "^4.1.0",
     "nx": "14.4.0",
     "ts-node": "~10.8.0",
     "typescript": "~4.7.2"

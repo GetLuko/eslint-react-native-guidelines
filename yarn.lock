@@ -1459,6 +1459,17 @@
     "@nrwl/workspace" "14.4.0"
     chalk "^4.1.0"
 
+"@nrwl/devkit@14.3.6":
+  version "14.3.6"
+  resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-14.3.6.tgz#40b9712e672438bd7a7b6ebbb7367fa68ec5fcc3"
+  integrity sha512-yGAZ5emBSb13smdkVagJRD/IC+ZkGLuRUc9A4Oqp/hDtOoUx6Jxot6vKwniTfbYZlk1Dkeq77d3atsEwz0dD1A==
+  dependencies:
+    ejs "^3.1.7"
+    ignore "^5.0.4"
+    rxjs "^6.5.4"
+    semver "7.3.4"
+    tslib "^2.3.0"
+
 "@nrwl/devkit@14.4.0":
   version "14.4.0"
   resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-14.4.0.tgz#acf156951c61fc48384722d7d28fcab99906ce19"
@@ -6668,6 +6679,13 @@ neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+
+ngx-deploy-npm@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-deploy-npm/-/ngx-deploy-npm-4.1.0.tgz#08d9a4eecfb3416b054ad21389efe31cba32bef6"
+  integrity sha512-/WHloNsGsmI8qAovFqS8AcTKyyuheiTmpQPxfDeyLBtgQ+/jvoxDfbEz98uTx4WtiSfSGJnOBLZiPVLwVyyqLg==
+  dependencies:
+    "@nrwl/devkit" "14.3.6"
 
 node-addon-api@^3.2.1:
   version "3.2.1"

@@ -11,13 +11,46 @@ jobs:
     permissions:
       packages: write
       contents: read
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: yarn
-      - run: npm publish
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            **\node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Build libraries
+        run: |
+          yarn nx affected:build --prod
+
+      -name: Publish packages
+      - run: |
+        for PACKAGE in $(yarn nx affected:libs --plain | awk 'NR > 2 && $1 != "Done" { print $1 }')
+        do
+          yarn nx deploy PACKAGE
+        done
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
