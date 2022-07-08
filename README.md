@@ -1,38 +1,20 @@
 # GetLuko React Native Guidelines = () => {
 
-*A mostly reasonable approach to React Native code guidelines by @GetLuko*
+*A reasonable approach to React Native code guidelines by @GetLuko*
 
 [![Downloads](https://img.shields.io/npm/dm/@getluko/eslint-plugin-mobile-guidelines.svg)](https://www.npmjs.com/package/@getluko/eslint-plugin-mobile-guidelines)
+
 ## Table of Contents
 
-  1. [Testing](#testing)
-  2. [Contributors](#contributors)
-  3. [License](#license)
-  4. [Amendments](#amendments)
-
-## Testing
-
-  ```jsx
-    // bad
-    return (
-      <Element
-        testID={'ElementTestID'}
-      />
-    );
-
-    // good
-    return (
-      <Element
-        testID={'element-test-id'}
-      />
-    );
-  ```
+  1. [Contributors](#contributors)
+  2. [License](#license)
+  3. [Amendments](#amendments)
 
 **[⬆ back to top](#table-of-contents)**
 
 **Blogs**
 
-  - [Medium](https://javascriptweekly.com/)
+  - [Medium](https://medium.com/lukocover/tech/home)
 
 ## Contributors
 
