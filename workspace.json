@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "eslint-config-react-native": "packages/eslint-config-react-native",
+    "eslint-plugin-react-native": "packages/eslint-plugin-react-native"
+  }
+}

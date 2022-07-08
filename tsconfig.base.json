@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@eslint-getluko-mobile/eslint-config-react-native": [
+        "packages/eslint-config-react-native/src/index.ts"
+      ],
+      "@getluko/eslint-plugin-react-native": [
+        "dist/packages/eslint-plugin-react-native/src/index.js"
+      ],
+      "@happynrwl/publish-me": [
+        "packages/publish-me/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp",
+    "**/__tests__/**",
+    "**/__mocks__/**"
+  ]
+}
