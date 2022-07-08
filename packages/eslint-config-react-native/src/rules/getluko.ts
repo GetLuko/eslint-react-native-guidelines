@@ -1,10 +1,10 @@
-import { ESLint } from 'eslint';
+import { ESLint } from "eslint";
 
 const Config: ESLint.ConfigData = {
-  plugins: ['@getluko/eslint-plugin-react-native-guidelines'],
+  plugins: ["@getluko/eslint-plugin-react-native"],
   rules: {
     // Warn and format testID prop to a lower-dash-case string
-    '@getluko/mobile-guidelines/lower-dash-case-test-id': 1,
+    "@getluko/react-native/lower-dash-case-test-id": 1,
   },
 };
 

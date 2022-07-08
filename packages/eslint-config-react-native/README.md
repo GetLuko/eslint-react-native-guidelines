@@ -18,4 +18,4 @@ Run `nx test eslint-config-react-native` to execute the unit tests via [Jest](ht
 
 ### Install required ESLint libraries
 
-`yarn add -D eslint-plugin-{detox,import,jest,jsx-expressions,prettier,react} @getluko/eslint-plugin-react-native-guidelines @typescript-eslint/{eslint-plugin,parser}`
+`yarn add -D eslint-plugin-{detox,import,jest,jsx-expressions,prettier,react,react-native,react-hooks} @getluko/eslint-plugin-react-native-guidelines @typescript-eslint/{eslint-plugin,parser}`
