@@ -23,6 +23,9 @@
       ],
       "@getluko/eslint-plugin-react-native": [
         "dist/packages/eslint-plugin-react-native/src/index.js"
+      ],
+      "@happynrwl/publish-me": [
+        "packages/publish-me/src/index.ts"
       ]
     }
   },

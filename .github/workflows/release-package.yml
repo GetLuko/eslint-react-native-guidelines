@@ -48,9 +48,8 @@ jobs:
 
       -name: Publish packages
       - run: |
-        for PACKAGE in $(yarn nx affected:libs --plain | awk 'NR > 2 && $1 != "Done" { print $1 }')
-        do
-          yarn nx deploy PACKAGE
-        done
+        yarn nx publish eslint-config-react-native --ver=$RELEASE_NAME --tag=latest
+        yarn nx publish eslint-plugin-react-native --ver=$RELEASE_NAME --tag=latest
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          RELEASE_NAME: ${{ github.event.release.tag_name }}.
