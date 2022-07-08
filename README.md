@@ -5,32 +5,9 @@
 [![Downloads](https://img.shields.io/npm/dm/@getluko/eslint-plugin-mobile-guidelines.svg)](https://www.npmjs.com/package/@getluko/eslint-plugin-mobile-guidelines)
 ## Table of Contents
 
-  1. [Testing](#testing)
-  2. [Contributors](#contributors)
-  3. [License](#license)
-  4. [Amendments](#amendments)
-
-## Testing
-
-### @getluko/react-native/lower-dash-case-test-id
-
-> Enforces consistent naming for testID prop
-
-  ```jsx
-    // bad
-    return (
-      <Element
-        testID="ElementTestID"
-      />
-    );
-
-    // good
-    return (
-      <Element
-        testID="element-test-id"
-      />
-    );
-  ```
+  1. [Contributors](#contributors)
+  2. [License](#license)
+  3. [Amendments](#amendments)
 
 **[⬆ back to top](#table-of-contents)**
 

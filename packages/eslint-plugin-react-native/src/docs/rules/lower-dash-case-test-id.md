@@ -6,21 +6,21 @@ Allows you to enforce a consistent naming pattern for testID prop which expect a
 
 Examples of **incorrect** code for this rule:
 
-```jsx
-return (
-  <Element
-    testID={'ElementTestID'}
-  />
-)
-```
+  ```jsx
+    // bad ❌
+    return (
+      <Element
+        testID="ElementTestID"
+      />
+    );
 
-```jsx
-return (
-  <Element
-    testID={'element_test_id'}
-  />
-)
-```
+    // good ✅
+    return (
+      <Element
+        testID="element-test-id"
+      />
+    );
+  ```
 
 Examples of **correct** code for this rule:
 

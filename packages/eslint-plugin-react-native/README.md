@@ -36,14 +36,14 @@ module.exports = {
 > This rule is used to enforce a consistent naming pattern for testID prop which expect a lower dash case.
 
   ```jsx
-    // bad
+    // bad ❌
     return (
       <Element
         testID="ElementTestID"
       />
     );
 
-    // good
+    // good ✅
     return (
       <Element
         testID="element-test-id"
