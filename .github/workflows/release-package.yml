@@ -49,4 +49,4 @@ jobs:
         run: |
           yarn nx run-many --target=publish --all --prod --ver=${{github.event.release.tag_name}}
           env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+            NPM_TOKEN: ${{secrets.NPM_TOKEN}}
