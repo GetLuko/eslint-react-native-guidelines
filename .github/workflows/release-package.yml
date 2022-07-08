@@ -43,11 +43,10 @@ jobs:
 
       - name: Build libraries
         run: |
-          yarn nx run-many --target=build --all
+          yarn nx run-many --target=build --all --prod
 
       - name: Publish packages
         run: |
-          yarn nx run-many --target=publish --all --ver=$RELEASE_NAME --tag=latest
+          yarn nx run-many --target=publish --all --prod --ver=${{github.event.release.tag_name}}
           env:
             NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-            RELEASE_NAME: ${{ github.event.release.tag_name }}.
