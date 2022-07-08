@@ -1,23 +1,26 @@
-import { JSXAttribute, Literal } from '@typescript-eslint/types/dist/ast-spec';
-import { ESLintUtils } from '@typescript-eslint/utils';
+import {
+  JSXAttribute,
+  Literal,
+} from "@typescript-eslint/types/dist/generated/ast-spec";
+import { ESLintUtils } from "@typescript-eslint/utils";
 
-import { regexCamelCase, regexSpecialChars } from './constants';
+import { regexCamelCase, regexSpecialChars } from "./constants";
 
 const createRule = ESLintUtils.RuleCreator((name) => name);
 
 const lowerDashCaseTestID = createRule({
-  name: 'lower-dash-case-test-id',
+  name: "lower-dash-case-test-id",
   defaultOptions: [],
   meta: {
-    type: 'suggestion',
+    type: "suggestion",
     messages: {
-      lowerDashCase: 'Convert this testID with a lower-dash-case',
+      lowerDashCase: "Convert this testID with a lower-dash-case",
     },
     docs: {
-      description: 'enforce lower-dash-case on testID prop',
-      recommended: 'error',
+      description: "enforce lower-dash-case on testID prop",
+      recommended: "error",
     },
-    fixable: 'code',
+    fixable: "code",
     schema: [], // no options
   },
   create(context) {
@@ -25,15 +28,15 @@ const lowerDashCaseTestID = createRule({
       // Replace CamelCase with lower-dash-case
       const stringWithDash = str.replace(
         regexCamelCase,
-        (match: string) => '-' + match
+        (match: string) => "-" + match
       );
       // Remove the first "-"
       const stringWithDashFormatted =
-        stringWithDash[0] === '-' ? stringWithDash.slice(1) : stringWithDash;
+        stringWithDash[0] === "-" ? stringWithDash.slice(1) : stringWithDash;
       return (
         stringWithDashFormatted
           // Replace spaces and specials characters by a "-"
-          .replace(regexSpecialChars, '-')
+          .replace(regexSpecialChars, "-")
           // Convert string to lower case
           .toLowerCase()
       );
@@ -43,7 +46,7 @@ const lowerDashCaseTestID = createRule({
       // Check if testID is lower-dash-cases
       const name = node.name.name;
       const value = (node.value as Literal)?.value;
-      if (name === 'testID' && value && typeof value === 'string') {
+      if (name === "testID" && value && typeof value === "string") {
         const newTestID = stringToLowerDashCase(value);
         const isBadPattern = newTestID !== value;
         if (isBadPattern) {
@@ -51,7 +54,7 @@ const lowerDashCaseTestID = createRule({
           context.report({
             node,
             // Return the messageId to match with meta.messages declaration
-            messageId: 'lowerDashCase',
+            messageId: "lowerDashCase",
             // Auto-fix the value
             fix(fixer) {
               // Replace testID value by the new testID
