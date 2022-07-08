@@ -43,12 +43,11 @@ jobs:
 
       - name: Build libraries
         run: |
-          yarn nx affected:build --prod
+          yarn nx run-many --target=build --projects=eslint-plugin-react-native,eslint-config-react-native
 
       - name: Publish packages
         run: |
-          yarn nx publish eslint-config-react-native --ver=$RELEASE_NAME --tag=latest
-          yarn nx publish eslint-plugin-react-native --ver=$RELEASE_NAME --tag=latest
+          yarn nx run-many --target=publish --projects=eslint-plugin-react-native,eslint-config-react-native --ver=$RELEASE_NAME --tag=latest
           env:
             NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
             RELEASE_NAME: ${{ github.event.release.tag_name }}.
