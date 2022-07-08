@@ -5,31 +5,51 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 16
-      - run: yarn
-      - run: yarn test
-      - run: yarn build
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
     permissions:
       packages: write
       contents: read
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: yarn
-      - run: yarn build
-      - run: npm publish
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - name: Cache yarn dependencies
+        uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            **\node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install
+
+      - name: Build libraries
+        run: |
+          yarn nx affected:build --prod
+
+      -name: Publish packages
+      - run: |
+        yarn nx publish eslint-config-react-native --ver=$RELEASE_NAME --tag=latest
+        yarn nx publish eslint-plugin-react-native --ver=$RELEASE_NAME --tag=latest
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          RELEASE_NAME: ${{ github.event.release.tag_name }}.
