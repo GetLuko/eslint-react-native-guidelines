@@ -12,18 +12,22 @@
 
 ## Testing
 
+### @getluko/react-native/lower-dash-case-test-id
+
+> Enforces consistent naming for testID prop
+
   ```jsx
     // bad
     return (
       <Element
-        testID={'ElementTestID'}
+        testID="ElementTestID"
       />
     );
 
     // good
     return (
       <Element
-        testID={'element-test-id'}
+        testID="element-test-id"
       />
     );
   ```

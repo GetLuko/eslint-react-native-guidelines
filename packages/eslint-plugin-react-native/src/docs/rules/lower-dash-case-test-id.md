@@ -37,9 +37,9 @@ return (
 `.eslintrc.js`
 ```js
 module.exports = {
-  plugins: ['@getluko/mobile-guidelines']
+  plugins: ['@getluko/react-native']
   rules: {
-    '@getluko/mobile-guidelines/lower-dash-case-test-id': 1,
+    '@getluko/react-native/lower-dash-case-test-id': 1,
   }
 };
 ```
