@@ -5,7 +5,6 @@ const Config: ESLint.ConfigData = {
     "./rules/default",
     "./rules/detox",
     "./rules/getluko",
-    "./rules/import",
     "./rules/prettier",
     "./rules/react-hooks",
     "./rules/react-native",
