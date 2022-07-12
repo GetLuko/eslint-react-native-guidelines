@@ -5,6 +5,9 @@
   "files": [
     "src"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "test": "jest"
   },

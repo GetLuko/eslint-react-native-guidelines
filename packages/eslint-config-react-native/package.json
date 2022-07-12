@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/GetLuko/eslint-react-native-guidelines"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "keywords": [
     "eslint",
     "eslintconfig",
