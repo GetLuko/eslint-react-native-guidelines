@@ -1,7 +1,7 @@
 {
   "name": "@getluko/eslint-plugin-react-native",
   "description": "GetLuko React Native ESLint Plugin created by the App Core guild",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",

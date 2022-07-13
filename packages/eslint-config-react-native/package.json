@@ -1,6 +1,6 @@
 {
   "name": "@getluko/eslint-config-react-native",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "GetLuko React Native ESLint Config created by the App Core guild",
   "license": "MIT",
   "repository": {
@@ -49,14 +49,16 @@
     "rimraf": "3.0.2",
     "ts-jest": "27.1.3",
     "typescript": "4.6.2",
-    "react": ">= 0.13.0"
+    "react": ">= 0.13.0",
+    "@getluko/eslint-plugin-react-native": "^0.0.3"
   },
   "peerDependencies": {
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.30.0",
-    "eslint-plugin-react-hooks": "^4.5.0"
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "@getluko/eslint-plugin-react-native": "^0.0.3"
   },
   "engines": {
     "node": "^10.12.0 || ^12.22.0 || ^14.17.0 || >=16.0.0"
