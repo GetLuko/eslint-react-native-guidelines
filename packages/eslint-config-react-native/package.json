@@ -1,6 +1,6 @@
 {
   "name": "@getluko/eslint-config-react-native",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "description": "GetLuko React Native ESLint Config created by the App Core guild",
   "license": "MIT",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "eslint-react-native-guidelines",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "license": "MIT",
   "devDependencies": {
     "@nrwl/cli": "14.4.0",
