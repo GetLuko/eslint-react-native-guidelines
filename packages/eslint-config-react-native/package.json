@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GetLuko/eslint-react-native-guidelines"
+    "url": "https://github.com/GetLuko/eslint-config-react-native"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -34,9 +34,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/GetLuko/eslint-react-native-guidelines/issues"
+    "url": "https://github.com/GetLuko/eslint-config-react-native/issues"
   },
-  "homepage": "https://github.com/GetLuko/eslint-react-native-guidelines",
+  "homepage": "https://github.com/GetLuko/eslint-config-react-native",
   "devDependencies": {
     "@types/node": "17.0.21",
     "babel-eslint": "^10.1.0",
