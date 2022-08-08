@@ -5,10 +5,11 @@ import {
 import { ESLintUtils } from "@typescript-eslint/utils";
 
 import { regexCamelCase, regexSpecialChars } from "./constants";
+import { MessageIds } from "./types";
 
 const createRule = ESLintUtils.RuleCreator((name) => name);
 
-const lowerDashCaseTestID = createRule({
+const lowerDashCaseTestID = createRule<never[], MessageIds>({
   name: "lower-dash-case-test-id",
   defaultOptions: [],
   meta: {

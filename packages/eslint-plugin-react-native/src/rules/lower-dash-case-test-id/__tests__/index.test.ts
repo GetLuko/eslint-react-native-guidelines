@@ -1,26 +1,32 @@
-import { RuleTester } from '@typescript-eslint/utils/dist/ts-eslint';
+import {
+  InvalidTestCase,
+  RuleTester,
+} from "@typescript-eslint/utils/dist/ts-eslint";
 
-import invalidStatements from '../__mocks__/invalid.statements';
-import validStatements from '../__mocks__/valid.statements';
-import rule from '../index';
+import invalidStatements from "../__mocks__/invalid.statements";
+import validStatements from "../__mocks__/valid.statements";
+import rule from "../index";
+import { MessageIds } from "../types";
 
-const RULE_NAME = 'lower-dash-case-test-id';
-const messageId = 'lowerDashCase';
+const RULE_NAME = "lower-dash-case-test-id";
+const defaultMessageId: MessageIds = "lowerDashCase";
 
 const ruleTester = new RuleTester({
-  parser: require('@typescript-eslint/parser'),
+  parser: require("@typescript-eslint/parser"),
   parserOptions: {
-    project: './tsconfig.json',
+    project: "./tsconfig.json",
     tsconfigRootDir: `../../${__dirname}`,
     ecmaVersion: 6,
     ecmaFeatures: {
       jsx: true,
     },
-    sourceType: 'module',
+    sourceType: "module",
   },
 });
 
-const errors = [{ messageId }];
+const errors: InvalidTestCase<MessageIds, never[]>["errors"] = [
+  { messageId: defaultMessageId },
+];
 
 ruleTester.run(RULE_NAME, rule, {
   valid: [{ code: validStatements[0] }, { code: validStatements[1] }],
