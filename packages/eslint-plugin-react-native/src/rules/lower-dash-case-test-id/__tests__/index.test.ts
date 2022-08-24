@@ -29,22 +29,10 @@ const errors: InvalidTestCase<MessageIds, never[]>["errors"] = [
 ];
 
 ruleTester.run(RULE_NAME, rule, {
-  valid: [{ code: validStatements[0] }, { code: validStatements[1] }],
-  invalid: [
-    {
-      code: invalidStatements[0],
-      errors,
-      output: validStatements[0],
-    },
-    {
-      code: invalidStatements[1],
-      errors,
-      output: validStatements[0],
-    },
-    {
-      code: invalidStatements[2],
-      errors,
-      output: validStatements[0],
-    },
-  ],
+  valid: validStatements.map((validStatement) => ({ code: validStatement })),
+  invalid: invalidStatements.map((invalidStatement) => ({
+    code: invalidStatement,
+    errors,
+    output: validStatements[0],
+  })),
 });

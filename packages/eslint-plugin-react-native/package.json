@@ -41,9 +41,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@typescript-eslint/parser": "5.14.0",
-    "@typescript-eslint/types": "5.13.0",
-    "@typescript-eslint/utils": "5.13.0"
+    "@typescript-eslint/parser": "^5.29.0",
+    "@typescript-eslint/types": "^5.29.0",
+    "@typescript-eslint/utils": "^5.29.0"
   },
   "devDependencies": {
     "@types/node": "17.0.21",

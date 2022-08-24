@@ -31,7 +31,7 @@ Examples of **correct** code for this rule:
 module.exports = {
   plugins: ['@getluko/react-native']
   rules: {
-    '@getluko/react-native/i18n-avoid-global-imports': 1,
+    '@getluko/react-native/i18n-avoid-global-imports': 2,
   }
 };
 ```
