@@ -18,10 +18,9 @@ const MyComponent = () => {
 `,
   `
 import i18n from '@locales/i18n';
-const getTabData = () => [
+const getData = () => [
   {
-    title: stringCapitalize(i18n.t('home.electricity.hours')),
-    scene: <DebugChart temporality="daily" />,
+    title: i18n.t('home.electricity.hours'),
   },
 ]
 `,

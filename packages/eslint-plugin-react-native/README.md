@@ -27,7 +27,7 @@ module.exports = {
   plugins: ['@getluko/react-native'],
   rules: {
     '@getluko/react-native/lower-dash-case-test-id': 1,
-    '@getluko/react-native/i18n-avoid-global-imports: 1,
+    '@getluko/react-native/i18n-avoid-global-imports: 2,
   }
 ```
 

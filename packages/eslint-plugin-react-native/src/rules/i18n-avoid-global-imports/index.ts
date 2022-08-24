@@ -19,6 +19,7 @@ const hasTranslatePropertyIdentifier = (
   return (
     "parent" in node &&
     "property" in node.parent &&
+    "name" in node.parent.property &&
     node.parent.property.name === "t"
   );
 };
