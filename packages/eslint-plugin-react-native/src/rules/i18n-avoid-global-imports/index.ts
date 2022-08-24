@@ -1,4 +1,4 @@
-import { Identifier } from "@typescript-eslint/types/dist/ast-spec";
+import { Identifier } from "@typescript-eslint/types/dist/generated/ast-spec";
 import { ESLintUtils } from "@typescript-eslint/utils";
 
 import { MessageIds } from "./types";
