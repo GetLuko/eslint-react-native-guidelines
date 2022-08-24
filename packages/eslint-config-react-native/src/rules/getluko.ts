@@ -5,6 +5,7 @@ const Config: ESLint.ConfigData = {
   rules: {
     // Warn and format testID prop to a lower-dash-case string
     "@getluko/react-native/lower-dash-case-test-id": 1,
+    "@getluko/react-native/i18n-avoid-global-imports": 1,
   },
 };
 

@@ -27,6 +27,7 @@ module.exports = {
   plugins: ['@getluko/react-native'],
   rules: {
     '@getluko/react-native/lower-dash-case-test-id': 1,
+    '@getluko/react-native/i18n-avoid-global-imports: 1,
   }
 ```
 
@@ -48,5 +49,24 @@ module.exports = {
       <Element
         testID="element-test-id"
       />
+    );
+  ```
+
+
+### [@getluko/react-native/i18n-avoid-global-imports](src/docs/rules/i18n-avoid-global-imports.md)
+
+> This rule is used to enforce i18n usage by avoiding global imports.
+
+  ```jsx
+    // bad ❌
+    const key = i18n.t('key');
+    return (
+      <Text>{key}</Text>
+    )
+
+    // good ✅
+    const getKey = () => i18n.t('key');
+    return (
+      <Text>{getKey()}</Text>
     );
   ```
