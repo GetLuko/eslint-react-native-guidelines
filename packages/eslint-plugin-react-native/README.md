@@ -27,13 +27,15 @@ module.exports = {
   plugins: ['@getluko/react-native'],
   rules: {
     '@getluko/react-native/lower-dash-case-test-id': 1,
+    '@getluko/react-native/i18n-avoid-global-imports: 2,
   }
 ```
 
 ## Rules
-### [@getluko/react-native/lower-dash-case-test-id](src/docs/rules/lower-dash-case-test-id.md)
 
-> This rule is used to enforce a consistent naming pattern for testID prop which expect a lower dash case.
+### @getluko/react-native/lower-dash-case-test-id
+
+> Allows you to enforce a consistent naming pattern for testID prop which expect a lower dash case.
 
   ```jsx
     // bad ❌
@@ -48,5 +50,23 @@ module.exports = {
       <Element
         testID="element-test-id"
       />
+    );
+  ```
+
+### @getluko/react-native/i18n-avoid-global-imports
+
+> Allows you to enforce i18n by avoiding global imports. it allows changing language dynamically without restarting the app.
+
+  ```jsx
+    // bad ❌
+    const key = i18n.t('key');
+    return (
+      <Text>{key}</Text>
+    )
+
+    // good ✅
+    const getKey = () => i18n.t('key');
+    return (
+      <Text>{getKey()}</Text>
     );
   ```

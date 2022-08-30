@@ -8,8 +8,8 @@ import validStatements from "../__mocks__/valid.statements";
 import rule from "../index";
 import { MessageIds } from "../types";
 
-const RULE_NAME = "lower-dash-case-test-id";
-const defaultMessageId: MessageIds = "lowerDashCase";
+const RULE_NAME = "i18n-avoid-global-imports";
+const defaultMessageId: MessageIds = "avoidI18nGlobalImports";
 
 const ruleTester = new RuleTester({
   parser: require("@typescript-eslint/parser"),
@@ -33,6 +33,5 @@ ruleTester.run(RULE_NAME, rule, {
   invalid: invalidStatements.map((invalidStatement) => ({
     code: invalidStatement,
     errors,
-    output: validStatements[0],
   })),
 });
