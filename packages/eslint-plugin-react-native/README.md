@@ -32,7 +32,8 @@ module.exports = {
 ```
 
 ## Rules
-### [@getluko/react-native/lower-dash-case-test-id](src/docs/rules/lower-dash-case-test-id.md)
+
+### @getluko/react-native/lower-dash-case-test-id
 
 > Allows you to enforce a consistent naming pattern for testID prop which expect a lower dash case.
 
@@ -52,8 +53,7 @@ module.exports = {
     );
   ```
 
-
-### [@getluko/react-native/i18n-avoid-global-imports](src/docs/rules/i18n-avoid-global-imports.md)
+### @getluko/react-native/i18n-avoid-global-imports
 
 > Allows you to enforce i18n by avoiding global imports. it allows changing language dynamically without restarting the app.
 
