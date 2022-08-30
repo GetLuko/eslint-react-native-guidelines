@@ -1,11 +1,11 @@
 {
   "name": "@getluko/eslint-plugin-react-native",
   "description": "GetLuko React Native ESLint Plugin created by the App Core guild",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/GetLuko/eslint-plugin-react-native"
+    "url": "https://github.com/GetLuko/eslint-react-native-guidelines"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -34,9 +34,9 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/GetLuko/eslint-plugin-react-native/issues"
+    "url": "https://github.com/GetLuko/eslint-react-native-guidelines/issues"
   },
-  "homepage": "https://github.com/GetLuko/eslint-plugin-react-native",
+  "homepage": "https://github.com/GetLuko/eslint-react-native-guidelines/tree/main/packages/eslint-plugin-react-native",
   "scripts": {
     "test": "jest"
   },
