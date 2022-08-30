@@ -4,6 +4,7 @@ import {
   JSXMemberExpression,
 } from "@typescript-eslint/types/dist/generated/ast-spec";
 import { ESLintUtils } from "@typescript-eslint/utils";
+import { I18nValidNodeTypes } from "./constants";
 
 import { MessageIds } from "./types";
 
@@ -11,6 +12,16 @@ const createRule = ESLintUtils.RuleCreator((name) => name);
 
 const isI18nNode = (node: Identifier) => {
   return node.name === "i18n";
+};
+
+const getParentNodeParents = (node: Identifier): AST_NODE_TYPES[] => {
+  const parents: AST_NODE_TYPES[] = [];
+  let currentNode: Identifier = node;
+  while (currentNode.parent) {
+    parents.push(currentNode.parent.type);
+    currentNode = currentNode.parent as Identifier;
+  }
+  return parents;
 };
 
 const hasTranslatePropertyIdentifier = (
@@ -24,11 +35,9 @@ const hasTranslatePropertyIdentifier = (
   );
 };
 
-const hasInvalidVariableDeclaration = (node: Identifier) => {
-  return (
-    // Get 3rd parent node to check if it is a variable declaration
-    node.parent?.parent?.parent?.type === AST_NODE_TYPES.VariableDeclarator
-  );
+const hasValidDeclaration = (node: Identifier) => {
+  const parents = getParentNodeParents(node);
+  return parents.some((parent) => I18nValidNodeTypes.includes(parent));
 };
 
 const lowerDashCaseTestID = createRule<never[], MessageIds>({
@@ -52,7 +61,7 @@ const lowerDashCaseTestID = createRule<never[], MessageIds>({
         if (
           isI18nNode(node) &&
           hasTranslatePropertyIdentifier(node) &&
-          hasInvalidVariableDeclaration(node)
+          !hasValidDeclaration(node)
         ) {
           context.report({
             node,

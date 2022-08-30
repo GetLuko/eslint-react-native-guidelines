@@ -30,6 +30,25 @@ export function setLocale(locale) {
   i18n.locale = locale;
 }
 `,
+  `
+import i18n from '@locales/i18n';
+const MyComponent = () => {
+  const key = i18n.t('home.setupAccount.title');
+  return <Text>{key}</Text>;
+};
+`,
+  `
+import i18n from '@locales/i18n';
+class NewScreen extends React.Component {
+	getKey() {
+    	const key = i18n.t('home.setupAccount.title');
+    }
+  
+    render(){
+      return <Text>{key}</Text>;
+    }
+}
+`,
 ];
 
 export default validStatements;
