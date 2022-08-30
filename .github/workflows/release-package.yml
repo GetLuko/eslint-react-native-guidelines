@@ -50,4 +50,6 @@ jobs:
           echo "NODE_AUTH_TOKEN=$NODE_AUTH_TOKEN"
           yarn nx run-many --target=publish --all --prod --ver=${{github.event.release.tag_name}} --tag=latest
           env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+            token: ${{ secrets.NPM_TOKEN }}
